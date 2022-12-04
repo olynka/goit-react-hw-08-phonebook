@@ -1,4 +1,4 @@
-import { Link, Header } from './AppBar/AppBar.styled'
+import { Link } from './AppBar/AppBar.styled'
 import React from 'react';
 const navItems = [
     
