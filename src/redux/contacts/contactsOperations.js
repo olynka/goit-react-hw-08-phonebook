@@ -1,5 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {
+  success,
+  errorMassege,
+  removeMessage,
+} from 'components/SharedLayout/NotificationAppBar/NotificationApp';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -21,8 +26,10 @@ export const addContacts = createAsyncThunk(
   async (newContacts, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/contacts', newContacts);
+        success();
       return data;
     } catch (error) {
+        errorMassege();
       return rejectWithValue(error);
     }
   }
@@ -32,8 +39,10 @@ export const removeContacts = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await axios.delete(`/contacts/${id}`);
+        removeMessage(data.name);
       return data;
     } catch (error) {
+       errorMassege();
       return rejectWithValue(error);
     }
   }

@@ -69,7 +69,7 @@ export const LoginPage = () => {
         </Label>
         <Button type="submit">Add contact</Button >
       </Form>
-    );
+    
    
     </div>
   );
