@@ -41,8 +41,8 @@ const handleSubmit = e => {
   };
   setName('');
     setNumber('');
-   if (duplicateContact(contact)) {
-      return alert(`"${contact}" is already in your Phonebook`);
+   if (duplicateContact(number)) {
+      return alert(`"${number}" is already in your Phonebook`);
   };
 
   dispatch(contactsOperations.addContacts(contact));
