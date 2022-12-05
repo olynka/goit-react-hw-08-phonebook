@@ -12,7 +12,7 @@ export const errorMassege = () =>
   });
 
 export const dublicate = data =>
-  toast.warn(`${data.name} is already in contacts `, {
+  toast.warn(`Welcome home!!!`, {
     theme: 'light',
   });
 
